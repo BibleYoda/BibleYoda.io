@@ -3,41 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Calculator</title>
+    <title>Modern Calculator</title>
+    <!-- Adding a Google Font for that extra 'clean' look -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="calculator">
-        <input type="text" id="display" disabled placeholder="0">
+    <main class="calculator" role="region" aria-label="Calculator">
+        <!-- aria-live ensures screen readers announce the result when it changes -->
+        <input type="text" id="display" readonly aria-label="Display" placeholder="0">
+        
         <div class="buttons">
-            <!-- Top Row -->
-            <button onclick="clearDisplay()" class="operator">AC</button>
-            <button onclick="deleteLast()" class="operator">DEL</button>
-            <button onclick="appendToDisplay('/')" class="operator">/</button>
-            <button onclick="appendToDisplay('*')" class="operator">×</button>
+            <!-- Functional Keys -->
+            <button onclick="clearDisplay()" class="operator" aria-label="All Clear">AC</button>
+            <button onclick="deleteLast()" class="operator" aria-label="Delete">DEL</button>
+            <button onclick="appendToDisplay('/')" class="operator" aria-label="Divide">÷</button>
+            <button onclick="appendToDisplay('*')" class="operator" aria-label="Multiply">×</button>
             
-            <!-- Numbers & Operators -->
+            <!-- Row 1 -->
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('-')" class="operator">-</button>
+            <button onclick="appendToDisplay('-')" class="operator" aria-label="Subtract">−</button>
             
+            <!-- Row 2 -->
             <button onclick="appendToDisplay('4')">4</button>
             <button onclick="appendToDisplay('5')">5</button>
             <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('+')" class="operator">+</button>
+            <button onclick="appendToDisplay('+')" class="operator" aria-label="Add">+</button>
             
+            <!-- Row 3 -->
             <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('2')">2</button>
             <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="calculate()" class="equals">=</button>
+            <button onclick="calculate()" class="equals" aria-label="Equals">=</button>
             
+            <!-- Row 4 -->
             <button onclick="appendToDisplay('0')" class="span-two">0</button>
             <button onclick="appendToDisplay('.')">.</button>
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
 </html>
+
